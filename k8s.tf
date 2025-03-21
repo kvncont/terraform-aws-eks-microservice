@@ -1,8 +1,8 @@
-data "aws_eks_cluster" "k8s" {
+data "aws_eks_cluster" "shared" {
   name = var.cluster_name
 }
 
-data "aws_eks_cluster_auth" "k8s" {
+data "aws_eks_cluster_auth" "shared" {
   name = var.cluster_name
 }
 
@@ -11,7 +11,7 @@ resource "kubernetes_manifest" "argocd_app" {
     "apiVersion" = "argoproj.io/v1alpha1"
     "kind"       = "Application"
     "metadata" = {
-      "name"      = var.waypoint_application
+      "name"      = local.app_name
       "namespace" = var.argocd_namespace
     }
     "spec" = {
@@ -27,8 +27,8 @@ resource "kubernetes_manifest" "argocd_app" {
       }
       "syncPolicy" = {
         "automated" = {
-          "prune"     = true
-          "selfHeal"  = true
+          "prune"    = true
+          "selfHeal" = true
         }
       }
     }

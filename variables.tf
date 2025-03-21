@@ -1,11 +1,11 @@
 variable "region" {
-    type = string
-    description = "The region in which the resources will be created."
+  type        = string
+  description = "The region in which the resources will be created."
 }
 
 variable "arn_role" {
-    type = string
-    description = "The ARN of the role that will be assumed by the terraform user."  
+  type        = string
+  description = "The ARN of the role that will be assumed by the terraform user."
 }
 
 variable "waypoint_application" {
@@ -20,7 +20,6 @@ variable "waypoint_application" {
 variable "image_tag_mutability" {
   type        = string
   description = "The image tag mutability setting for the repository."
-  default     = "MUTABLE"
   validation {
     condition     = can(regex("^(MUTABLE|IMMUTABLE)$", var.image_tag_mutability))
     error_message = "The image_tag_mutability variable must be either MUTABLE or IMMUTABLE."
@@ -33,7 +32,7 @@ variable "scan_on_push" {
 }
 
 variable "lifecycle_policy" {
-  type = bool
+  type        = bool
   description = "Whether to enable the lifecycle policy for the ECR repository."
 }
 
