@@ -33,8 +33,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_argocd_namespace"></a> [argocd\_namespace](#input\_argocd\_namespace) | The namespace where Argo CD is installed. | `string` | n/a | yes |
-| <a name="input_arn_role"></a> [arn\_role](#input\_arn\_role) | The ARN of the role that will be assumed by the terraform user. | `string` | n/a | yes |
+| <a name="input_assume_role_arn"></a> [assume\_role\_arn](#input\_assume\_role\_arn) | The ARN of the role that will be assumed by the terraform user. | `string` | n/a | yes |
 | <a name="input_backend_namespace"></a> [backend\_namespace](#input\_backend\_namespace) | The namespace of the backend services in Kubernetes. | `string` | n/a | yes |
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | The name of the EKS cluster. | `string` | n/a | yes |
 | <a name="input_image_tag_mutability"></a> [image\_tag\_mutability](#input\_image\_tag\_mutability) | The image tag mutability setting for the repository. | `string` | n/a | yes |
@@ -43,7 +42,6 @@ No modules.
 | <a name="input_region"></a> [region](#input\_region) | The region in which the resources will be created. | `string` | n/a | yes |
 | <a name="input_repo_url"></a> [repo\_url](#input\_repo\_url) | The URL of the Git repository containing the Kubernetes manifests. | `string` | n/a | yes |
 | <a name="input_scan_on_push"></a> [scan\_on\_push](#input\_scan\_on\_push) | Whether to enable image scanning on push. | `bool` | n/a | yes |
-| <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to assign to the resources. | `map(string)` | n/a | yes |
 | <a name="input_waypoint_application"></a> [waypoint\_application](#input\_waypoint\_application) | Name of the application | `string` | n/a | yes |
 
 ## Outputs
