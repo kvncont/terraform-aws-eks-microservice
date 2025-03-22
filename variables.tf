@@ -3,7 +3,7 @@ variable "region" {
   description = "The region in which the resources will be created."
 }
 
-variable "arn_role" {
+variable "assume_role_arn" {
   type        = string
   description = "The ARN of the role that will be assumed by the terraform user."
 }
@@ -46,11 +46,6 @@ variable "backend_namespace" {
   description = "The namespace of the backend services in Kubernetes."
 }
 
-variable "argocd_namespace" {
-  type        = string
-  description = "The namespace where Argo CD is installed."
-}
-
 variable "repo_url" {
   type        = string
   description = "The URL of the Git repository containing the Kubernetes manifests."
@@ -59,9 +54,4 @@ variable "repo_url" {
 variable "manifest_path" {
   type        = string
   description = "The path within the Git repository to the Kubernetes manifests."
-}
-
-variable "tags" {
-  type        = map(string)
-  description = "A map of tags to assign to the resources."
 }

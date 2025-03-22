@@ -14,7 +14,12 @@ terraform {
 provider "aws" {
   region = var.region
   assume_role {
-    role_arn = var.arn_role
+    role_arn = var.assume_role_arn
+  }
+  default_tags {
+    tags = {
+      managed_by = "terraform"
+    }
   }
 }
 
