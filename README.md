@@ -25,7 +25,6 @@ No modules.
 | [aws_eks_pod_identity_association.app](https://registry.terraform.io/providers/hashicorp/aws/5.91.0/docs/resources/eks_pod_identity_association) | resource |
 | [aws_iam_role.app](https://registry.terraform.io/providers/hashicorp/aws/5.91.0/docs/resources/iam_role) | resource |
 | [kubernetes_manifest.argocd_app](https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/manifest) | resource |
-| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/5.91.0/docs/data-sources/caller_identity) | data source |
 | [aws_eks_cluster.shared](https://registry.terraform.io/providers/hashicorp/aws/5.91.0/docs/data-sources/eks_cluster) | data source |
 | [aws_eks_cluster_auth.shared](https://registry.terraform.io/providers/hashicorp/aws/5.91.0/docs/data-sources/eks_cluster_auth) | data source |
 
