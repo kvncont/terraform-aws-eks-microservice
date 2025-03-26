@@ -13,12 +13,22 @@ output "ecr_repository_name" {
   value       = aws_ecr_repository.app.name
 }
 
-output "iam_role_arn" {
+output "app_iam_role_arn" {
   description = "The arn of the role."
   value       = aws_iam_role.app.arn
 }
 
-output "iam_role_name" {
+output "app_iam_role_name" {
   description = "The name of the role"
   value       = aws_iam_role.app.name
+}
+
+output "ci_iam_role_arn" {
+  description = "The arn of the role."
+  value       = aws_iam_role.ci.arn
+}
+
+output "ci_iam_role_name" {
+  description = "The name of the role"
+  value       = aws_iam_role.ci.name
 }
