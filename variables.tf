@@ -55,3 +55,8 @@ variable "manifest_path" {
   type        = string
   description = "The path within the Git repository to the Kubernetes manifests."
 }
+
+variable "create_gh_repo" {
+  type        = bool
+  description = "Whether to create a GitHub repository for the application or use an existing one."
+}
