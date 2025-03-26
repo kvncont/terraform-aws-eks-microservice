@@ -41,9 +41,9 @@ variable "cluster_name" {
   description = "The name of the EKS cluster."
 }
 
-variable "backend_namespace" {
+variable "namespace" {
   type        = string
-  description = "The namespace of the backend services in Kubernetes."
+  description = "The namespace of the services in Kubernetes."
 }
 
 variable "repo_url" {

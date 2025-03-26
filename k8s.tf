@@ -15,7 +15,7 @@ resource "kubernetes_manifest" "argocd_app" {
       }
       "destination" = {
         "server"    = "https://kubernetes.default.svc"
-        "namespace" = var.backend_namespace
+        "namespace" = var.namespace
       }
       "syncPolicy" = {
         "automated" = {
