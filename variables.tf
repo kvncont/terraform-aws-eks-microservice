@@ -46,17 +46,29 @@ variable "namespace" {
   description = "The namespace of the services in Kubernetes."
 }
 
-variable "repo_url" {
+variable "k8s_manifests_repo" {
   type        = string
-  description = "The URL of the Git repository containing the Kubernetes manifests."
+  description = "The k8s manifests repository NAME."
 }
 
-variable "manifest_path" {
+variable "helm_chart_repo" {
   type        = string
-  description = "The path within the Git repository to the Kubernetes manifests."
+  description = "The Helm chart repository name."
 }
 
 variable "create_gh_repo" {
   type        = bool
   description = "Whether to create a GitHub repository for the application or use an existing one."
+}
+
+variable "aws_access_key_id_github_actions" {
+  type        = string
+  description = "The AWS access key ID for GitHub Actions User."
+  sensitive   = true
+}
+
+variable "aws_secret_access_key_github_actions" {
+  type        = string
+  description = "The AWS secret access key for GitHub Actions User."
+  sensitive   = true
 }

@@ -17,10 +17,7 @@ resource "github_repository" "app" {
     include_all_branches = false
   }
 
-  depends_on = [
-    aws_ecr_repository.app,
-    aws_iam_access_key.github_actions
-  ]
+  depends_on = [aws_ecr_repository.app]
 }
 
 resource "github_actions_variable" "region" {
@@ -50,11 +47,11 @@ resource "github_actions_secret" "account_id" {
 resource "github_actions_secret" "access_key_id" {
   repository      = local.gh_repo
   secret_name     = "AWS_ACCESS_KEY_ID"
-  plaintext_value = aws_iam_access_key.github_actions.id
+  plaintext_value = var.aws_access_key_id_github_actions
 }
 
 resource "github_actions_secret" "secret_access_key" {
   repository      = local.gh_repo
   secret_name     = "AWS_SECRET_ACCESS_KEY"
-  plaintext_value = aws_iam_access_key.github_actions.secret
+  plaintext_value = var.aws_secret_access_key_github_actions
 }

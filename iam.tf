@@ -1,18 +1,7 @@
 data "aws_caller_identity" "current" {}
 
-# Oficial implementation
-# data "aws_iam_user" "github_actions" {
-#   user_name = "github-actions"
-# }
-
-# Temporal user for GitHub Actions
-resource "aws_iam_user" "github_actions" {
-  name = "github_actions"
-}
-
-# Temporal access key for GitHub Actions
-resource "aws_iam_access_key" "github_actions" {
-  user = aws_iam_user.github_actions.name
+data "aws_iam_user" "github_actions" {
+  user_name = "github-actions"
 }
 
 resource "aws_iam_role" "app" {
@@ -44,7 +33,7 @@ resource "aws_iam_role" "ci" {
       {
         Effect = "Allow"
         Principal = {
-          AWS = aws_iam_user.github_actions.arn
+          AWS = data.aws_iam_user.github_actions.arn
         }
         Action = [
           "sts:AssumeRole",

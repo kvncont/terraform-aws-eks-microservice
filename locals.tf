@@ -3,4 +3,5 @@ locals {
   app_role_name = "EKSMicroExecutionRoleFor${replace(title(local.app_name), "-", "")}"
   ci_role_name  = "CIRoleFor${replace(title(local.app_name), "-", "")}"
   gh_repo       = var.create_gh_repo ? github_repository.app[0].name : data.github_repository.app[0].name
+  env           = split("-", var.waypoint_application)[length(split("-", var.waypoint_application)) - 1]
 }
