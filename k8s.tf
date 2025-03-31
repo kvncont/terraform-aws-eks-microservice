@@ -15,7 +15,7 @@ resource "kubernetes_manifest" "argocd_app_k8s_manifests" {
       "source" = {
         "repoURL"        = data.github_repository.k8s_manifests.html_url
         "targetRevision" = "main"
-        "path"           = "${local.env}/${local.app_name}" 
+        "path"           = "${local.env}/${local.app_name}"
       }
       "destination" = {
         "server"    = "https://kubernetes.default.svc"
