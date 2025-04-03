@@ -46,16 +46,6 @@ variable "namespace" {
   description = "The namespace of the services in Kubernetes."
 }
 
-variable "k8s_manifests_repo" {
-  type        = string
-  description = "The k8s manifests repository NAME."
-}
-
-variable "helm_chart_repo" {
-  type        = string
-  description = "The Helm chart repository name."
-}
-
 variable "create_gh_repo" {
   type        = bool
   description = "Whether to create a GitHub repository for the application or use an existing one."
