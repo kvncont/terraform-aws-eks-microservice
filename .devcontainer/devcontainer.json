@@ -9,9 +9,18 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "hashicorp.terraform"
+        "hashicorp.terraform",
+        "ms-vscode.copilot-mermaid-diagram",
+        "ms-vscode.vscode-copilot-vision",
+        "ms-vscode.vscode-speech-language-pack-es-mx",
+        "ms-vscode.vscode-speech",
+        "ms-vscode.vscode-websearchforcopilot",
+        "GitHub.copilot-chat",
+        "redhat.vscode-yaml"
       ],
       "settings": {
+        "accessibility.voice.speech": true,
+        "accessibility.voice.speechLanguage": "es-MX",
         "editor.insertSpaces": true,
         "editor.tabSize": 2,
         "editor.formatOnSave": true
